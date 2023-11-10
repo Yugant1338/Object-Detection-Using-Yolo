@@ -1,4 +1,4 @@
-Object Detection with YOLO (You Only Look Once)
+#Object Detection with YOLO (You Only Look Once)
 
 Overview
 Welcome to the Object Detection with YOLO project! This project focuses on utilizing machine learning techniques, specifically YOLO, to perform real-time object detection. YOLO is a state-of-the-art, real-time object detection system that can detect multiple objects in a single frame.
