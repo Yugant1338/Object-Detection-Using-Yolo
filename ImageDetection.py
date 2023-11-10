@@ -7,15 +7,15 @@ import math
 import numpy
 
 img=cv2.imread(r"C:\Users\raajc\PycharmProjects\ObjectDetection\venv\360_F_388979227_lKgqMJPO5ExItAuN4tuwyPeiknwrR7t2.jpg")
+# provide with the image location with respect to your pc
 classname=['person','bicycle', 'car', 'motorbike', 'aeroplane', 'bus', 'train', 'truck', 'boat', 'traffic light', 'fire hydrant', 'stop sign', 'parking meter', 'bench', 'bird', 'cat', 'dog', 'horse', 'sheep', 'cow', 'elephant', 'bear', 'zebra', 'giraffe', 'backpack', 'umbrella', 'handbag', 'tie', 'suitcase', 'frisbee', 'skis', 'snowboard', 'sports ball', 'kite', 'baseball bat', 'baseball glove', 'skateboard', 'surfboard', 'tennis racket', 'bottle', 'wine glass', 'cup', 'fork', 'knife', 'spoon', 'bowl', 'banana', 'apple', 'sandwich', 'orange', 'broccoli', 'carrot', 'hot dog', 'pizza', 'donut', 'cake', 'chair', 'sofa', 'pottedplant', 'bed', 'diningtable', 'toilet', 'tvmonitor', 'laptop', 'mouse', 'remote', 'keyboard', 'cell phone', 'microwave', 'oven', 'toaster', 'sink', 'refrigerator', 'book', 'clock', 'vase', 'scissors', 'teddy bear', 'hair drier', 'toothbrush']
 img=cv2.resize(img,(800,600))
-
+# image is being resized to 800x600 dimesion
 model = YOLO('yolo weights/yolov8l.pt')
-
+# Yolo v8 weight is being used for the detection procedure
 results=model(img, stream=True)
 for r in results:
     boxes=r.boxes
-
     kpt=r.keypoints
 if kpt is not None:
             kpt = kpt.cpu().numpy()
