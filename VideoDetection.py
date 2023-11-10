@@ -7,11 +7,14 @@ import math
 import numpy
 
 cap = cv2.VideoCapture(r"C:\Users\raajc\PycharmProjects\ObjectDetection\venv\walk.mp4")
+# provide with the image location with respect to your pc
 classname=['person', 'bicycle', 'car', 'motorbike', 'aeroplane', 'bus', 'train', 'truck', 'boat', 'traffic light', 'fire hydrant', 'stop sign', 'parking meter', 'bench', 'bird', 'cat', 'dog', 'horse', 'sheep', 'cow', 'elephant', 'bear', 'zebra', 'giraffe', 'backpack', 'umbrella', 'handbag', 'tie', 'suitcase', 'frisbee', 'skis', 'snowboard', 'sports ball', 'kite', 'baseball bat', 'baseball glove', 'skateboard', 'surfboard', 'tennis racket', 'bottle', 'wine glass', 'cup', 'fork', 'knife', 'spoon', 'bowl', 'banana', 'apple', 'sandwich', 'orange', 'broccoli', 'carrot', 'hot dog', 'pizza', 'donut', 'cake', 'chair', 'sofa', 'pottedplant', 'bed', 'diningtable', 'toilet', 'tvmonitor', 'laptop', 'mouse', 'remote', 'keyboard', 'cell phone', 'microwave', 'oven', 'toaster', 'sink', 'refrigerator', 'book', 'clock', 'vase', 'scissors', 'teddy bear', 'hair drier', 'toothbrush']
 cap.set(3,800)
 cap.set(4,600)
+# video is being resized to 800x600 dimesion
 model = YOLO('yolo weights/yolov8l.pt')
 while True:
+# while the user provides with an interuppt the code with run and detect the objects in the video frame per frame on a loop
     success, img=cap.read()
     results=model(img, stream=True)
     for r in results:
