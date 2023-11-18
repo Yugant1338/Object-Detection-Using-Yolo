@@ -1,4 +1,4 @@
-#### *Object Detection with YOLO (You Only Look Once)*
+# *Object Detection with YOLO (You Only Look Once)*
 
 
 
